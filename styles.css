@@ -53,3 +53,39 @@ body {
 .front-face {
   transform: rotateY(180deg);
 }
+
+#dialogPop{
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: space-between;
+  width: 500px;
+}
+
+#coteGauche{
+  width: 230px;
+}
+
+
+p{
+  font-style: italic;
+}
+
+hr {
+  border-top: 0.7px solid #002fff;
+  text-align: center;
+  width: 228px;
+}
+
+#fermerFenetre{
+  border-radius: 5px;
+  color: white;
+  background-color: #1C7CCC;
+  border-color: #1C7CCC;
+}
+#FermerDefinitivement{
+  background-color: white;
+  border-color: white;
+  
+}
+

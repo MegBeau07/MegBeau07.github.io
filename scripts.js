@@ -61,3 +61,27 @@ function resetBoard() {
 })();
 
 cards.forEach(card => card.addEventListener('click', flipCard));
+// =========================================================================
+// Mon code                                           =
+// =========================================================================
+
+document.getElementById("dialogPop").showModal();
+//Identifier mes variables
+/*
+function fermerDialogue() {
+  document.getElementById("dialogPop").close();
+}
+
+function fermerPourToujours() {
+  localStorage.setItem("FermerDefinitivement", "true");
+  document.getElementById("dialogPop").close();
+}
+/**
+* Vérifier si le dialogue a déjà été fermé définitivement
+
+window.onload = function() {
+  if (localStorage.getItem("FermerDefinitivement") === "true") {
+      document.getElementById("dialogPop").close();
+  }}
+      */
+
