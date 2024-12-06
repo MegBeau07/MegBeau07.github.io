@@ -92,3 +92,7 @@ hr {
   color: #ebff68;
 }
 
+dialog::backdrop {
+  background: rgba(33, 81, 255, 0.25);
+}
+
