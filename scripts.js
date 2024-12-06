@@ -3,7 +3,9 @@ const cards = document.querySelectorAll('.memory-card');
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
-
+//Ajout de 2 variables
+let pairePareil = 0;
+let paireTotal = 6;
 function flipCard() {
   if (lockBoard) return;
   if (this === firstCard) return;
@@ -33,6 +35,13 @@ function checkForMatch() {
 function disableCards() {
   firstCard.removeEventListener('click', flipCard);
   secondCard.removeEventListener('click', flipCard);
+
+  //Pour fonction Arreter timer et recommencer
+  pairePareil++;
+
+  if (pairePareil === paireTotal) {
+    arreterJeu();
+  }
 
   resetBoard();
 }
@@ -64,10 +73,9 @@ cards.forEach(card => card.addEventListener('click', flipCard));
 // =========================================================================
 // Mon code                                           =
 // =========================================================================
-
-document.getElementById("dialogPop").showModal();
 //Identifier mes variables
-/*
+
+
 function fermerDialogue() {
   document.getElementById("dialogPop").close();
 }
@@ -76,12 +84,60 @@ function fermerPourToujours() {
   localStorage.setItem("FermerDefinitivement", "true");
   document.getElementById("dialogPop").close();
 }
-/**
-* Vérifier si le dialogue a déjà été fermé définitivement
+if (localStorage.getItem("FermerDefinitivement") !== "true") {
+  document.getElementById("dialogPop").showModal();
+}
 
-window.onload = function() {
-  if (localStorage.getItem("FermerDefinitivement") === "true") {
-      document.getElementById("dialogPop").close();
-  }}
-      */
+  //Ma fonction timer 
+  //Ajout fonctionnalité
+const timer = document.getElementById("decompte");
+let secondes = 59;
+let valide = true;
+let interval;
+
+//Quand cliquer --> commence le timer
+cards.forEach(card => card.addEventListener('click', debut));
+
+//Starter timer
+function debut() {
+  if (valide) {
+   interval = setInterval(timerdecompte, 1000);
+   timerdecompte();
+  }
+  valide = false;
+}
+
+
+// Créer le decompte
+
+function timerdecompte(){
+  if (secondes < 10) {
+    timer.innerHTML = (secondes);
+  }
+  else {
+    timer.innerHTML = ("0:" + secondes);
+  }
+  if(secondes > 0) {
+    secondes--;
+  }
+  // Arrêter le jeu lorsque le timer atteint zéro
+  else if (secondes === 0) {
+    arreterJeu(); 
+  }
+}
+// Fonction pour arrêter le jeu
+function arreterJeu() {
+  clearInterval(interval);
+  recommencerJeu();
+}
+function recommencerJeu(){
+   // Recharge la page
+  location.reload();
+}
+
+
+
+
+
+
 

@@ -1,8 +1,8 @@
-* {
+*/* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}
+}*/
 
 body {
   height: 100vh;
@@ -33,10 +33,12 @@ body {
 .memory-card:active {
   transform: scale(0.97);
   transition: transform .2s;
+  margin: 5px;
 }
 
 .memory-card.flip {
   transform: rotateY(180deg);
+  margin: 5px;
 }
 
 .front-face,
@@ -54,18 +56,13 @@ body {
   transform: rotateY(180deg);
 }
 
-#dialogPop{
+#dialogPop div{
   display: flex;
   flex-direction: column; 
   align-items: center;
   justify-content: space-between;
   width: 500px;
 }
-
-#coteGauche{
-  width: 230px;
-}
-
 
 p{
   font-style: italic;
@@ -87,5 +84,11 @@ hr {
   background-color: white;
   border-color: white;
   
+}
+
+#decompte{
+  margin: auto;
+  font-size: 250px;
+  color: #ebff68;
 }
 
