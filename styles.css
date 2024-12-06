@@ -80,6 +80,7 @@ hr {
   background-color: #1C7CCC;
   border-color: #1C7CCC;
 }
+
 #FermerDefinitivement{
   background-color: white;
   border-color: white;
@@ -93,6 +94,6 @@ hr {
 }
 
 dialog::backdrop {
-  background: rgba(33, 81, 255, 0.25);
+  background: rgba(93,188,251,0.5);
 }
 
